@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const path = require("path");
-const template = require("../models/template");
 
 router.put("/:id", (request, response) => {
     console.log("Se ejecuta router")

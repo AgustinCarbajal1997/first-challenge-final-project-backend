@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
-require('./routes/mongo_connection');
 
 var indexRouter = require('./routes/index');
 const allProducts = require('./routes/show_products/all_products');

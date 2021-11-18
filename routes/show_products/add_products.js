@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const path = require("path");
-const template = require("../models/template");
 
 router.post("/", (request, response) => {
     fs.readFile(path.join(__dirname, "../../db/db.json"),(error, data) => {
