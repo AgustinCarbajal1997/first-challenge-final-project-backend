@@ -2,9 +2,11 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const path = require("path");
+const template = require("../models/template");
 
-router.put("/:id", (request, response) => {
-    console.log("Se ejecuta router")
+router.put("/:id/:user", (request, response) => {
+    const user = request.params.user;
+    if(!user || user !== "admin") return response.status(407).json({error:"Falta autenticación"})
     fs.readFile(path.join(__dirname, "../../db/db.json"),(error, data) => {
         if(error){
             console.log(error);
