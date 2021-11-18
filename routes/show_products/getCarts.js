@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const path = require("path");
-const cors = require("cors");
-router.get('/', cors(),(request, response)=>{
+router.get('/',(request, response)=>{
     fs.readFile(path.join(__dirname,"../../db/carts.json"),(error,data)=>{
         if(error){
             response.status(404).json({ error:"No se encontraron resultados" })
